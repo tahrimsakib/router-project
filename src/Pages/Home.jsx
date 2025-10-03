@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import { data } from "react-router";
 
 const Home = () => {
-  const [p, setP] = useState([]);
+  const [ps, setP] = useState([]);
 
   useEffect(() => {
     fetch("./Data.json")
       .then((res) => res.json())
-      .then((data) => console.log(data.id));
+      .then((data) => setP(data));
   }, []);
+  console.log(ps);
 
-  return <div className="container mx-auto px-4 py-8"></div>;
+  return (
+    <div className="">
+      <h1 className="text-3xl px-4 py-8 ">welcome home</h1>
+      {ps.map((p) => (
+        <h1 key={p.id}>{p.movie}</h1>
+      ))}
+    </div>
+  );
 };
 
 export default Home;
