@@ -8,6 +8,7 @@ import Contract from "./Pages/Contract.jsx";
 import RootLayout from "./Layout/RootLayout.jsx";
 import Me from "./Pages/me.jsx";
 import Details from "./Pages/Details.jsx";
+import Loading from "./Componenet/Loading.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        Component: Home,
         loader: () => fetch("./Data.json"),
       },
       {
