@@ -7,6 +7,7 @@ import Home from "./Pages/Home.jsx";
 import Contract from "./Pages/Contract.jsx";
 import RootLayout from "./Layout/RootLayout.jsx";
 import Me from "./Pages/me.jsx";
+import Details from "./Pages/Details.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/me",
         Component: Me,
+      },
+      {
+        path: "/details/:id",
+        Component: Details,
       },
     ],
   },
